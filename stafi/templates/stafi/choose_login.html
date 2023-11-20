@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+    #background-foto {
+    width: 100%;
+    height: 120vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: brightness(30%)
+  }
+    #prf{
+        color: white;
+         margin: auto;
+         width: 60%;
+         border: none;
+         padding: 10px;
+        font-style: italic;
+    }
+
+</style>
+</head>
+<body>
+
+<img src="../../static/css/learning.jpg" height="580" width="1021" id="background-foto"/>
+<br>
+ <h1> <i class="fa-solid fa-graduation-cap fa-lg"></i>E-learning <br></h1>
+<br><br>
+<p id="prf">
+    "Welcome to our online learning platform where the educational possibilities are unlimited. We have created this platform with the goal of helping you on your way to knowledge and success."</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sign in as Admin</h5>
+                    <p class="card-text">If you are an admin, click the button below to enter as an admin.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Log in as Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sign in as Student</h5>
+                    <p class="card-text">If you are a student, click the button below to log in as a student.</p>
+                    <a href="{% url 'login_student' %}" class="btn btn-success">Log in as Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

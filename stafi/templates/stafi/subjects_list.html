@@ -1,0 +1,42 @@
+{% extends "stafi/base.html" %}
+{% block body %}
+<br><br>
+{% if subjects %}
+ <div class="card bg-light ms-4 me-4 mb-4">
+            <div class="card-header">
+    <div class="row">
+        <div class="col">
+           <h5><i class="fa-solid fa-list"></i> Subjects</h5>
+        </div>
+        <div class="col text-end">
+            <a href="{% url 'shto' %}" class="btn btn-secondary" style="text-transform: none;">
+                <i class="fa-solid fa-plus"></i> Add Subject
+            </a>
+        </div>
+    </div>
+</div>
+       <div class="card-body">
+                <p class="card-text">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+
+{% for subject in subjects %}
+<tr>
+   <td> <h4>{{ subject.name }}</h4>
+    <p>{{ subject.description }}</p>
+   </td>
+    <td>
+    <a href="{% url 'subject_details' subject_id=subject.id %}" class="btn btn-outline-primary" style="text-transform: none;">View Details<i class="fa-solid fa-arrow-right"></i></a>
+    </td>
+    {% endfor %}
+</tr>
+                        </tbody>
+                    </table>
+       </div>
+       </div>
+ </div>
+
+{% endif %}
+
+{% endblock%}

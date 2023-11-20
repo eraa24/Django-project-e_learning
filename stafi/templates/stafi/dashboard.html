@@ -1,0 +1,38 @@
+{% extends "stafi/base.html" %}
+{% block body%}
+
+<br><br><br><br>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+ <div class="card">
+  <div class="card-body">
+    <h6 class="card-title"><button type="button" class="btn btn-primary btn-lg"
+                                   style="padding:25px;text-transform: none; padding-left:120px; padding-right:120px"
+                                   disabled><i class="fa-solid fa-graduation-cap fa-lg"></i>E-learning</button></h6>
+      <br>
+    <p class="card-text"><i class="fa-solid fa-book "> </i> Subjects</p>
+    <a href="{% url 'subjects_list' %}" class="btn btn-outline-primary" style="text-transform: none;">More <i class="fa-solid fa-arrow-right" ></i> </a>
+  </div>
+</div>
+    </div>
+
+
+    <div class="col">
+ <div class="card">
+  <div class="card-body">
+    <h6 class="card-title"><button type="button" class="btn btn-primary btn-lg"
+                                   style="padding:25px;text-transform: none; padding-left:120px; padding-right:120px"
+                                   disabled><i class="fa-solid fa-graduation-cap fa-lg"></i>E-learning</button></h6>
+      <br>
+    <p class="card-text"><i class="fa-solid fa-user-graduate"> </i> Professors</p>
+    <a href="{% url 'index'%}" class="btn btn-outline-primary" style="text-transform: none;">More <i class="fa-solid fa-arrow-right"></i> </a>
+  </div>
+</div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

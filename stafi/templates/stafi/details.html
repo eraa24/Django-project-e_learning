@@ -1,0 +1,106 @@
+{% extends "stafi/baza.html" %}
+{% block body %}
+<br><br>
+
+<div class=" row">
+    <div class="col-12">
+
+        {% if kurset %}
+        <div class="card bg-light ms-4 me-4 mb-4">
+            <div class="card-header">
+    <div class="row">
+        <div class="col">
+           <h5><i class="fa-solid fa-list"></i> Details</h5>
+        </div>
+        <div class="col text-end">
+            <a href="{% url 'student_dashboard' %}" class="btn btn-secondary" style="text-transform: none;">
+                <i class="fa-solid fa-arrow-left"></i> Subjects </a>
+
+        </div>
+
+    </div>
+</div>
+
+      <div class="card-body">
+                <p class="card-text">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+
+                            <th scope="col">Lessions</th>
+                            <th scope="col">Professor</th>
+                            <th scope="col">Credits</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for kurs in kurset %}
+                        <tr>
+
+<td>                <a href="{% url 'serve_lesson_file' subject_id=kurs.subject.id leksioni=kurs.leksioni %}" target="_blank" >
+                             {{kurs.leksioni}}</a>
+
+</td>
+
+                            <td>{{kurs.petagogu}}</td>
+                            <td>{{kurs.kredite}}</td>
+
+
+                            <td>
+
+                                  <button type="button"
+                                        href="{% url 'view_website' kurs.id %}"
+                                        data-bs-target="#myModal{{ kurs.id }}"
+                                        data-bs-toggle="modal"
+                                        class="btn btn-success me-1">
+                                    <i class="fa-solid fa-circle-info fa-lg"></i>
+                                </button>
+
+                                <div class="modal" id="myModal{{kurs.id}}" tabindex="-1"
+                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul class="list-unstyled">
+                                                    <li>Lession: <strong>{{kurs.leksioni}}</strong></li>
+                                                    <li>Professor: <strong>{{kurs.petagogu}}</strong></li>
+                                                    <li>Credits: <strong>{{kurs.kredite}}</strong></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        {% else %}
+        <h5 class="alert alert-primary ms-4 me-4">We do not have any registered items.</h5>
+
+        {% endif%}
+
+    </div>
+</div>
+
+{% endblock%}
+

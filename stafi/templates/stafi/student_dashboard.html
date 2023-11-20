@@ -1,0 +1,22 @@
+{% extends "stafi/baza.html" %}
+{% block body%}
+ <br><br>
+
+<div class="container">
+    <div class="row">
+        {% for subject in subjects %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa-solid fa-paperclip">  </i> {{ subject.name }}</h5>
+                    <p class="card-text">{{ subject.description }}</p>
+                    <a href="{% url 'details' subject_id=subject.id %}" class="btn btn-outline-primary" style="text-transform: none;">More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
